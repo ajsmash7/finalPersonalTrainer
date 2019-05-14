@@ -17,6 +17,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let imageStore = ImageStore()
+        
+        let managedContext = persistentContainer.viewContext
+        let navController = window!.rootViewController as! UINavigationController
+        let viewControllers = navController.viewControllers
+        
+        for controller in viewControllers {
+            if let controller = controller as? ClientTableViewController {
+                controller.managedContext = managedContext
+                
+            }
+            if let controller = controller as? AddEditClientDetailViewController {
+                controller.managedContext = managedContext
+                controller.imageStore = imageStore
+            }
+            if let controller = controller as? ClientWeightTableViewController {
+                controller.managedContext = managedContext
+                controller.imageStore = imageStore
+            }
+            if let controller = controller as? AddEditWeightRecordController{
+                controller.managedContext = managedContext
+                controller.imageStore = imageStore
+            }
+
+        }
         return true
     }
 

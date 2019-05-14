@@ -8,13 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		316E7BF822811AB3008F9E37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316E7BF722811AB3008F9E37 /* AppDelegate.swift */; };
-		316E7BFA22811AB3008F9E37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316E7BF922811AB3008F9E37 /* ViewController.swift */; };
 		316E7BFD22811AB3008F9E37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 316E7BFB22811AB3008F9E37 /* Main.storyboard */; };
 		316E7C0022811AB3008F9E37 /* iOSPersonalTrainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 316E7BFE22811AB3008F9E37 /* iOSPersonalTrainer.xcdatamodeld */; };
 		316E7C0222811AB3008F9E37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316E7C0122811AB3008F9E37 /* Assets.xcassets */; };
 		316E7C0522811AB3008F9E37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 316E7C0322811AB3008F9E37 /* LaunchScreen.storyboard */; };
 		316E7C1022811AB3008F9E37 /* iOSPersonalTrainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316E7C0F22811AB3008F9E37 /* iOSPersonalTrainerTests.swift */; };
 		316E7C1B22811AB3008F9E37 /* iOSPersonalTrainerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316E7C1A22811AB3008F9E37 /* iOSPersonalTrainerUITests.swift */; };
+		316E7C2922812738008F9E37 /* ClientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316E7C2822812738008F9E37 /* ClientTableViewController.swift */; };
+		316E7C2B22812D48008F9E37 /* AddEditClientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316E7C2A22812D48008F9E37 /* AddEditClientDetailViewController.swift */; };
+		316E7C2F22813044008F9E37 /* ClientWeightTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316E7C2E22813044008F9E37 /* ClientWeightTableViewController.swift */; };
+		316E7C3122813083008F9E37 /* AddEditWeightRecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316E7C3022813083008F9E37 /* AddEditWeightRecordController.swift */; };
+		316E7C33228130A3008F9E37 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316E7C32228130A3008F9E37 /* AlertViewController.swift */; };
+		316E7C35228130C2008F9E37 /* ClientDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316E7C34228130C2008F9E37 /* ClientDelegate.swift */; };
+		316E7C37228130E8008F9E37 /* WeightRecordDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316E7C36228130E8008F9E37 /* WeightRecordDelegate.swift */; };
+		316E7C3A22813E95008F9E37 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316E7C3922813E95008F9E37 /* RecordCell.swift */; };
+		318E1C44228B1A5B00993BCC /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318E1C43228B1A5B00993BCC /* ImageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +45,6 @@
 /* Begin PBXFileReference section */
 		316E7BF422811AB3008F9E37 /* iOSPersonalTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSPersonalTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		316E7BF722811AB3008F9E37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		316E7BF922811AB3008F9E37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		316E7BFC22811AB3008F9E37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		316E7BFF22811AB3008F9E37 /* iOSPersonalTrainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOSPersonalTrainer.xcdatamodel; sourceTree = "<group>"; };
 		316E7C0122811AB3008F9E37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +56,15 @@
 		316E7C1622811AB3008F9E37 /* iOSPersonalTrainerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSPersonalTrainerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		316E7C1A22811AB3008F9E37 /* iOSPersonalTrainerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSPersonalTrainerUITests.swift; sourceTree = "<group>"; };
 		316E7C1C22811AB3008F9E37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		316E7C2822812738008F9E37 /* ClientTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTableViewController.swift; sourceTree = "<group>"; };
+		316E7C2A22812D48008F9E37 /* AddEditClientDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditClientDetailViewController.swift; sourceTree = "<group>"; };
+		316E7C2E22813044008F9E37 /* ClientWeightTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientWeightTableViewController.swift; sourceTree = "<group>"; };
+		316E7C3022813083008F9E37 /* AddEditWeightRecordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditWeightRecordController.swift; sourceTree = "<group>"; };
+		316E7C32228130A3008F9E37 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		316E7C34228130C2008F9E37 /* ClientDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDelegate.swift; sourceTree = "<group>"; };
+		316E7C36228130E8008F9E37 /* WeightRecordDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightRecordDelegate.swift; sourceTree = "<group>"; };
+		316E7C3922813E95008F9E37 /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
+		318E1C43228B1A5B00993BCC /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +115,17 @@
 		316E7BF622811AB3008F9E37 /* iOSPersonalTrainer */ = {
 			isa = PBXGroup;
 			children = (
+				316E7C38228130FC008F9E37 /* View Controllers */,
 				316E7BF722811AB3008F9E37 /* AppDelegate.swift */,
-				316E7BF922811AB3008F9E37 /* ViewController.swift */,
 				316E7BFB22811AB3008F9E37 /* Main.storyboard */,
 				316E7C0122811AB3008F9E37 /* Assets.xcassets */,
 				316E7C0322811AB3008F9E37 /* LaunchScreen.storyboard */,
 				316E7C0622811AB3008F9E37 /* Info.plist */,
 				316E7BFE22811AB3008F9E37 /* iOSPersonalTrainer.xcdatamodeld */,
+				316E7C34228130C2008F9E37 /* ClientDelegate.swift */,
+				316E7C36228130E8008F9E37 /* WeightRecordDelegate.swift */,
+				316E7C3922813E95008F9E37 /* RecordCell.swift */,
+				318E1C43228B1A5B00993BCC /* ImageStore.swift */,
 			);
 			path = iOSPersonalTrainer;
 			sourceTree = "<group>";
@@ -126,6 +146,18 @@
 				316E7C1C22811AB3008F9E37 /* Info.plist */,
 			);
 			path = iOSPersonalTrainerUITests;
+			sourceTree = "<group>";
+		};
+		316E7C38228130FC008F9E37 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				316E7C2822812738008F9E37 /* ClientTableViewController.swift */,
+				316E7C2A22812D48008F9E37 /* AddEditClientDetailViewController.swift */,
+				316E7C2E22813044008F9E37 /* ClientWeightTableViewController.swift */,
+				316E7C3022813083008F9E37 /* AddEditWeightRecordController.swift */,
+				316E7C32228130A3008F9E37 /* AlertViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +294,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				316E7BFA22811AB3008F9E37 /* ViewController.swift in Sources */,
+				318E1C44228B1A5B00993BCC /* ImageStore.swift in Sources */,
+				316E7C2922812738008F9E37 /* ClientTableViewController.swift in Sources */,
+				316E7C2F22813044008F9E37 /* ClientWeightTableViewController.swift in Sources */,
+				316E7C35228130C2008F9E37 /* ClientDelegate.swift in Sources */,
+				316E7C33228130A3008F9E37 /* AlertViewController.swift in Sources */,
+				316E7C3A22813E95008F9E37 /* RecordCell.swift in Sources */,
+				316E7C2B22812D48008F9E37 /* AddEditClientDetailViewController.swift in Sources */,
+				316E7C3122813083008F9E37 /* AddEditWeightRecordController.swift in Sources */,
 				316E7BF822811AB3008F9E37 /* AppDelegate.swift in Sources */,
 				316E7C0022811AB3008F9E37 /* iOSPersonalTrainer.xcdatamodeld in Sources */,
+				316E7C37228130E8008F9E37 /* WeightRecordDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
