@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSPersonalTrainer/View Controllers/AddEditClientDetailViewController.swift"
-            timestampString = "579657935.298265"
+            timestampString = "579672334.27441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "AddEditClientDetailViewController"
             landmarkType = "3">
          </BreakpointContent>
