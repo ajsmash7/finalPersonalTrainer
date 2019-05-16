@@ -10,9 +10,12 @@ import Foundation
 import UIKit
 import CoreData
 
-class AddEditWeightRecordController: UIViewController, UIImagePickerControllerDelegate, WeightRecordDelegate, UINavigationControllerDelegate {
+class AddEditWeightRecordController: UIViewController, UIImagePickerControllerDelegate, ClientDelegate, WeightRecordDelegate, UINavigationControllerDelegate {
     
+    //declare an instance of ImageStore and a Client
     var imageStore: ImageStore!
+    var clientDelegate: ClientDelegate?
+    var client: Client?
     
     let dateFormatter = { () -> DateFormatter in
         let df = DateFormatter()
@@ -22,16 +25,17 @@ class AddEditWeightRecordController: UIViewController, UIImagePickerControllerDe
     var delegate: WeightRecordDelegate?
     
     @IBOutlet var weightField: UITextField!
-    @IBOutlet var dateField: UITextField!
+    @IBOutlet var recordDatePicker: UIDatePicker!
     @IBOutlet var bmiField: UITextField!
     @IBOutlet var imageField: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Add Weight Record"
+        
        
     }
-    
+    //calculate the BMI based on the client's height and weight.
     func bmiCalculator(weight: Float, height: Float) -> Float {
         
         let bmi = ((weight/(height*height))*703)
@@ -55,28 +59,25 @@ class AddEditWeightRecordController: UIViewController, UIImagePickerControllerDe
         present(imagePicker, animated: true, completion: nil)
         
     }
-    
+    //get the stored client from the ClientDelegate, then save new record
     @IBAction func saveButton(_ sender: Any) {
         
+        let client = clientDelegate?.getClient!()
         
-        guard let date = dateFormatter(DateFormatter.dateField.text!) else {
-            showAlert(title: "Error", message: "Enter a date")
-            return
-        }
+        let date = recordDatePicker.date
+        
         guard let bmi = Float(bmiField.text!) else {
             showAlert(title: "Error", message: "Couldn't calculate BMI")
             return
         }
         
-        guard let imageUrlString = (imageStore.imageURL) else {
-            showAlert(title: "Error", message: "Enter numercial data for height")
-            return
-        }
+        
         guard let weight = Float(weightField.text!) else {
             showAlert(title: "Error", message: "Enter numerical data for height")
             return
-        delegate?.newWeightRecord(client: Client, weight: weight, date: date, bmi: bmi, photo: imageUrlString)
-        
+        }
+        // I don't think this is correct... how do I get the URL from the imagePicker?
+        delegate?.newWeightRecord!(client: client!, weight: weight, date: date, bmi: bmi, photo: imageStore.imageURL)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -84,11 +85,12 @@ class AddEditWeightRecordController: UIViewController, UIImagePickerControllerDe
         //Get picked image from info dictionary
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
+        let urlForSaving = imageStore.imageURL
         //Store the image in the ImageStore
-        imageStore.savePhoto(image)
+        imageStore.savePhoto(image: image, url:urlForSaving)
         
         //Put the image on the screen in the image view
-        imageView.image = image
+        imageField.image = image
         
         //Tale the image picker off the screen
         //you must call this dismiss method

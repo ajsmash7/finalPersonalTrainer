@@ -15,9 +15,10 @@ import CoreData
 //between the two entities. Because of this, It required that it conform to the protocol, but I made their CRUD constructors optional,
 // so they can be useful when necessary, but don't have to muddy it up with redundant data
 
-class AddEditClientDetailViewController: UIViewController, NSFetchedResultsControllerDelegate, ClientDelegate, WeightRecordDelegate {
-
-        
+class AddEditClientDetailViewController: UIViewController, UITabBarControllerDelegate, NSFetchedResultsControllerDelegate, ClientDelegate, WeightRecordDelegate {
+    
+    // initialize data sources
+    var imageStore: ImageStore!
     var managedContext: NSManagedObjectContext?
     var client: Client?
     var clientDelegate: ClientDelegate?
@@ -26,12 +27,14 @@ class AddEditClientDetailViewController: UIViewController, NSFetchedResultsContr
     var weightRecords: [WeightRecord] = []
     var firstRecord: WeightRecord?
     
+    //create a date formatter
     let dateFormatter = { () -> DateFormatter in
         let df = DateFormatter()
         df.dateStyle = .long
         return df
     }()
     
+    //wire up the outlets for the View Controller. If the client is currently existing, these fields are populated in viewDidLoad()
     @IBOutlet var navGuide: UINavigationItem!
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var ageTextField: UITextField!
@@ -46,7 +49,9 @@ class AddEditClientDetailViewController: UIViewController, NSFetchedResultsContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // if viewing the details of an existing client, load the data, call it a Profile
+        // if viewing the details of an existing client, load the data, call it a Profile.
+        // the data from the segue is loaded here, the data from the current weight record is initialized and loaded in loadInitialData()
+        // was cleaner that way
         if let c = client {
             navGuide.title = "Profile"
             nameTextField.text = c.name
@@ -61,16 +66,16 @@ class AddEditClientDetailViewController: UIViewController, NSFetchedResultsContr
     
         
     func loadInitialData() -> Void {
-
+        //set who the client is
         guard let client = client else {
             preconditionFailure("Client must be set to edit current user")
         }
 
-        
+        //set the client as the Predicate parameter for the manager to determine which weight records to pull from Core Data
         let clientPredicate = NSPredicate(format: "client == %@", client)
-        
+        //set to sort the records by date
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
-        
+        //apply the query parameters to the fetch
         let weightRecordsFetch = NSFetchRequest<WeightRecord>(entityName: "WeightRecord")
         weightRecordsFetch.sortDescriptors = [sortDescriptor]
         weightRecordsFetch.predicate = clientPredicate
@@ -79,6 +84,8 @@ class AddEditClientDetailViewController: UIViewController, NSFetchedResultsContr
         
         fetchedWeightRecordsController?.delegate = self
         
+        //fetch
+        //if there is data, we want the most recent record to populate the Profile fields.
         do {
             try fetchedWeightRecordsController?.performFetch()
             weightRecords = fetchedWeightRecordsController!.fetchedObjects!
@@ -95,8 +102,6 @@ class AddEditClientDetailViewController: UIViewController, NSFetchedResultsContr
         
     }
 
-    
-    
     
     func totalBMI(records:[WeightRecord]) -> Void {
         if records.count > 1 {
@@ -117,7 +122,7 @@ class AddEditClientDetailViewController: UIViewController, NSFetchedResultsContr
         bmiTextField.text! = "\(record.bmi)"
         
        //currentPhoto
-
+        currentPhoto.image = imageStore.getPhoto(url: record.photo!)
         
         
     }
@@ -157,13 +162,19 @@ class AddEditClientDetailViewController: UIViewController, NSFetchedResultsContr
         }else{
             clientDelegate?.newClient!(name: name, age: age, initialWeight: weight, height: height)
         }
-        navigationController!.popViewController(animated: true)
     }
     
     @IBAction func deleteClient(_ sender: Any) -> Void {
         clientDelegate?.delete!(client: client!)
         navigationController!.popViewController(animated: true)
     }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
+        clientDelegate?.setClient!(client: client!)
+        
+            
+        }
     
 }
     

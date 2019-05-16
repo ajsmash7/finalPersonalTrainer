@@ -10,37 +10,30 @@ import UIKit
 
 class ImageStore {
     
-    
+    //assign a randomly generated file URL
     let imageURL: URL = {
-        let imageFilename = "weight_loss"
+        let imageFilename = UUID().uuidString
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentDirectory = documentsDirectory.first!
         return documentDirectory.appendingPathComponent(imageFilename)
     }()
     
-    func savePhoto(image: UIImage) {
+    //save the image to the file URL
+    func savePhoto(image: UIImage, url:URL) {
         if let data = UIImageJPEGRepresentation(image, 1) {
-            try? data.write(to: imageURL, options: [.atomic])
+            try? data.write(to: url, options: [.atomic])
         }
     }
-    
-    func getPhoto() -> UIImage? {
-        guard let imageFromDisk = UIImage(contentsOfFile: imageURL.path) else {
+    //get the photo from the URL
+    func getPhoto(url:URL) -> UIImage? {
+        guard let imageFromDisk = UIImage(contentsOfFile: url.path) else {
             
             return nil
         }
         return imageFromDisk
     }
-
     
-    func deleteImage(image: UIImage) {
+   
     
-        let url = imageURL
-        do {
-            try FileManager.default.removeItem(at: url)
-        } catch {
-            print("Error removing the image from disk: \(error)")
-        }
-    }
 }
 

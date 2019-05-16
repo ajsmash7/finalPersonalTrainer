@@ -11,5 +11,8 @@ import UIKit
 
 class RecordCell: UITableViewCell {
     
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var weightLabel: UILabel!
+    @IBOutlet var recordPhoto: UIImageView!
     
 }

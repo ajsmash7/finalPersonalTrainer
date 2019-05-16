@@ -38,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 controller.imageStore = imageStore
             }
             if let controller = controller as? AddEditWeightRecordController{
-                controller.managedContext = managedContext
                 controller.imageStore = imageStore
             }
 

@@ -13,5 +13,7 @@ import Foundation
     
     @objc optional func modify(client:Client) -> Void
     @objc optional func delete(client:Client) -> Void
+    @objc optional func setClient(client:Client) -> Void
+    @objc optional func getClient() -> Client
     
 }

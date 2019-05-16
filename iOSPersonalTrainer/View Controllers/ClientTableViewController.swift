@@ -66,7 +66,7 @@ class ClientTableViewController: UITableViewController, NSFetchedResultsControll
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Fetch request for a client, and sort the results
+        //Fetch request for a client, and sort the results, validate than it can be opened
         let sorter = NSSortDescriptor(key: "name", ascending: true)
         let clientFetch = NSFetchRequest<Client>(entityName: "Client")
         clientFetch.sortDescriptors = [sorter]
@@ -83,7 +83,7 @@ class ClientTableViewController: UITableViewController, NSFetchedResultsControll
         }
         
     }
-    
+    //if the results changed, refetch data
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         clientObjects = controller.fetchedObjects as! [Client]
         tableView.reloadData()

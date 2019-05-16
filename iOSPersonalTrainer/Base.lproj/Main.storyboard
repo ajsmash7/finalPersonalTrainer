@@ -105,24 +105,24 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AUh-lL-wt4">
-                                        <rect key="frame" x="0.0" y="55" width="359" height="30"/>
+                                        <rect key="frame" x="0.0" y="55" width="359" height="216"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yue-20-lKf">
-                                                <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="45" height="216"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y5S-z0-UBF">
-                                                <rect key="frame" x="53" y="0.0" width="306" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <datePicker contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JtS-2M-MsK">
+                                                <rect key="frame" x="53" y="0.0" width="306" height="216"/>
+                                                <date key="date" timeIntervalSinceReferenceDate="579665671.45808196">
+                                                    <!--2019-05-16 02:14:31 +0000-->
+                                                </date>
+                                            </datePicker>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4nV-L5-ux8">
-                                        <rect key="frame" x="0.0" y="110" width="359" height="30"/>
+                                        <rect key="frame" x="0.0" y="296" width="359" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9e-wM-0wO">
                                                 <rect key="frame" x="0.0" y="0.0" width="38.5" height="30"/>
@@ -139,24 +139,23 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5ii-UE-y6G">
-                                        <rect key="frame" x="0.0" y="165" width="359" height="373"/>
+                                        <rect key="frame" x="0.0" y="351" width="359" height="187"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Photo: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nu2-zN-e9h">
-                                                <rect key="frame" x="0.0" y="0.0" width="54.5" height="373"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="54.5" height="187"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="KL8-Ro-Zoy">
-                                                <rect key="frame" x="62.5" y="0.0" width="296.5" height="373"/>
+                                                <rect key="frame" x="62.5" y="0.0" width="296.5" height="187"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="syq-Lj-jxd">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syq-Lj-jxd">
                                 <rect key="frame" x="0.0" y="10" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="yfL-tN-tmE">
                                         <rightBarButtonItems>
@@ -179,16 +178,19 @@
                         <constraints>
                             <constraint firstItem="nJ0-eB-GaO" firstAttribute="bottom" secondItem="Md2-Qz-XGv" secondAttribute="bottom" constant="8" id="Gx7-Ax-lkD"/>
                             <constraint firstItem="Md2-Qz-XGv" firstAttribute="top" secondItem="nJ0-eB-GaO" secondAttribute="top" constant="8" id="Qjc-hY-Rsu"/>
+                            <constraint firstItem="syq-Lj-jxd" firstAttribute="centerX" secondItem="Md2-Qz-XGv" secondAttribute="centerX" id="cAw-jI-ehF"/>
+                            <constraint firstItem="syq-Lj-jxd" firstAttribute="leading" secondItem="SVg-GD-gmn" secondAttribute="leading" id="kH5-4M-qN0"/>
                             <constraint firstItem="nJ0-eB-GaO" firstAttribute="trailing" secondItem="Md2-Qz-XGv" secondAttribute="trailing" constant="8" id="qLf-mw-0FU"/>
                             <constraint firstItem="Md2-Qz-XGv" firstAttribute="leading" secondItem="nJ0-eB-GaO" secondAttribute="leading" constant="8" id="sSm-m5-FFD"/>
+                            <constraint firstItem="Md2-Qz-XGv" firstAttribute="top" secondItem="syq-Lj-jxd" secondAttribute="bottom" constant="18" id="zuz-cu-8Sw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nJ0-eB-GaO"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add New" id="DuM-6b-5fU"/>
                     <connections>
                         <outlet property="bmiField" destination="NHn-Dq-h0h" id="lZG-Jg-mqm"/>
-                        <outlet property="dateField" destination="Y5S-z0-UBF" id="FLv-7Y-Yiw"/>
                         <outlet property="imageField" destination="KL8-Ro-Zoy" id="vsu-qQ-Mvk"/>
+                        <outlet property="recordDatePicker" destination="JtS-2M-MsK" id="SpD-cr-rpH"/>
                         <outlet property="weightField" destination="lQk-WM-SOe" id="XRY-qt-MUt"/>
                     </connections>
                 </viewController>
@@ -243,6 +245,11 @@
                                         <constraint firstAttribute="trailing" secondItem="2o6-l7-Jnn" secondAttribute="trailing" id="pUe-Jp-Vz4"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="f4h-k1-pO4" id="MDH-pr-HZC"/>
+                                    <outlet property="recordPhoto" destination="2o6-l7-Jnn" id="veC-hM-g0c"/>
+                                    <outlet property="weightLabel" destination="SoU-zz-64o" id="ciP-fm-1b5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

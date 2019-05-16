@@ -73,7 +73,7 @@ class ClientWeightTableViewController: UITableViewController, NSFetchedResultsCo
         return cell
     }
     
-    func newWeightRecord(client: Client, weight: Float, date: Date, bmi: Float, photo: NSData) {
+    internal func newWeightRecord(client: Client, weight: Float, date: Date, bmi: Float, photo: URL) {
         let weightRecord = WeightRecord(context: managedContext!)
         weightRecord.client = client
         weightRecord.date = date
