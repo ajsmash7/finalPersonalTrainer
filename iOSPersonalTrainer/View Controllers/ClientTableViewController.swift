@@ -92,12 +92,13 @@ class ClientTableViewController: UITableViewController, NSFetchedResultsControll
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return clientObjects.count
     }
-    //I wanted to use a sorter and get the last date from weight records, but data types are conflicting
+    //I wanted to use a sorter and get the last date from weight records, but data types are conflicting so I used age to no return a nil value
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let client = clientObjects[indexPath.row]
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClientTableCell")!
         cell.textLabel?.text = client.name
+        cell.detailTextLabel?.text = "\(client.age)"
         return cell
     }
     
