@@ -95,7 +95,7 @@ class ClientTableViewController: UITableViewController, NSFetchedResultsControll
     //I wanted to use a sorter and get the last date from weight records, but data types are conflicting
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let client = clientObjects[indexPath.row]
-        //let sorter = NSSortDescriptor(key: "date", ascending: false)
+    
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClientTableCell")!
         cell.textLabel?.text = client.name
         return cell
